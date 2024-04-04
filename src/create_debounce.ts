@@ -2,7 +2,7 @@
 /* IMPORT */
 
 import {debounce} from 'dettle';
-import type {Callback, Debounced, DebouncedRaw} from './types';
+import type {Callback, DebounceOptions, Debounced, DebouncedRaw} from './types';
 
 /* MAIN */
 
@@ -15,7 +15,7 @@ const createDebounce = () => {
 
   /* DEBOUNCE */
 
-  return ( fn: Callback, wait: number = 1, options?: { leading?: boolean, trailing?: boolean, maxWait?: number } ): Debounced => {
+  return ( fn: Callback, wait: number = 1, options?: DebounceOptions ): Debounced => {
 
     const id = `${wait}-${options?.maxWait}-${options?.leading}-${options?.trailing}}`;
 

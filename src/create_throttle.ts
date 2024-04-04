@@ -2,7 +2,7 @@
 /* IMPORT */
 
 import createDebounce from './create_debounce';
-import type {Callback, Throttled} from './types';
+import type {Callback, ThrottleOptions, Throttled} from './types';
 
 /* MAIN */
 
@@ -14,7 +14,7 @@ const createThrottle = () => {
 
   /* THROTTLE */
 
-  return ( fn: Callback, wait: number = 1, options?: { leading?: boolean, trailing?: boolean } ): Throttled => {
+  return ( fn: Callback, wait: number = 1, options?: ThrottleOptions ): Throttled => {
 
     return debounce ( fn, wait, {
       maxWait: wait,
